@@ -14,8 +14,21 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
+
   article.associate = function(models) {
     // associations can be defined here
+    article.belongsTo(models.category, {
+      foreignKey: "category_id",
+      as: "category",
+      sourceKey: "id"
+    });
+
+    article.belongsTo(models.user, {
+      foreignKey: "user_id",
+      as: "user",
+      sourceKey: "id"
+    });
   };
+
   return article;
 };
