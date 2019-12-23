@@ -1,0 +1,27 @@
+## CATEGORY
+
+### LIST
+GET http://localhost:5000/api/v1/categories/
+
+### DETAIL
+GET http://localhost:5000/api/v1/category/24
+
+
+### SAVE
+POST http://localhost:5000/api/v1/category/
+Content-Type: application/json
+
+{
+    "name" : "Elementor"
+}
+
+### UPDATE
+PATCH http://localhost:5000/api/v1/category/23
+Content-Type: application/json
+
+{
+    "name" : "Elementor1"
+}
+
+### DELETE
+DELETE http://localhost:5000/api/v1/category/24
