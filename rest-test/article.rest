@@ -1,0 +1,43 @@
+## ARTICLE
+
+### LIST
+GET http://localhost:5000/api/v1/articles/
+
+### DETAIL
+GET http://localhost:5000/api/v1/article/8
+
+### SAVE
+POST http://localhost:5000/api/v1/article/
+Content-Type: application/json
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+
+{
+    "title" : "Korban Bus Terjun ke Jurang di Sumsel: 28 Orang Tewas, 13 Terluka",
+    "content" : "Tim gabungan dari TNI, Polri, Basarnas, dan unsur potensi SAR mengehentikan sementara proses pencarian korban Bus Sriwijaya yang terjun ke jurang saat melintas di tikungan Lematang Indah, Kecamatan Dempo Tengah, Kota Pagar Alam, Sumatera Selatan.",
+    "image" : "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1573011748/ygaexjqgh0kncjfvxoap.jpg",
+    "category_id" : 2,
+    "is_published" : 1,
+    "is_archived" : 0
+}
+
+### UPDATE
+PUT http://localhost:5000/api/v1/article/7
+Content-Type: application/json
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+
+
+{
+    "title" : "Seeding MongoDB database the right way",
+    "content" : "About year ago, my friend and I started building a basic CRUD app as a side project. On the back-end side there was nothing fancy — a simple GraphQL API server written in TypeScript. When it comes to storing the data, it was a typical use case for NoSQL database, so we’ve picked the most popular solution out there — MongoDB. At some point we needed to import some development data to test our database queries. There are many tools for MongoDB data import, including the official one, mongoimport. I started to do a research and it turned out that none of them is good enough. Every single solution had three flaws described below.",
+    "image" : "https://miro.medium.com/max/5045/1*HBhUirJi_iEoPq59BIlyHQ.jpeg",
+    "category_id" : 2,
+    "is_published" : 1,
+    "is_archived" : 0
+}
+
+### DELETE
+DELETE http://localhost:5000/api/v1/article/6
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
