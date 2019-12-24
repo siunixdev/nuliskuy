@@ -16,12 +16,12 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     user.hasMany(models.article, {
       as: "article",
-      foreignKey: "user_id"
+      foreignKey: "creator_user_id"
     });
 
     user.hasMany(models.comment, {
       as: "comment",
-      foreignKey: "user_id"
+      foreignKey: "creator_user_id"
     });
   };
   return user;

@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     article.belongsTo(models.user, {
-      foreignKey: "user_id",
+      foreignKey: "creator_user_id",
       as: "user",
       sourceKey: "id"
     });

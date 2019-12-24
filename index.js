@@ -7,6 +7,7 @@ const port = 5000;
 
 // Controller
 const categoryController = require("./controller/category");
+const articleController = require("./controller/article");
 const authController = require("./controller/auth");
 
 // Midlleware
@@ -31,6 +32,13 @@ app.group("/api/v1", router => {
     categoryController.delete
   );
   router.patch("/category/:id", authMidlleware.auth, categoryController.update);
+  // router.get("/category/:id/articles", categoryController.getArticleList);
+
+  router.get("/articles", articleController.list);
+  router.get("/article/:id", articleController.detail);
+  router.post("/article/", authMidlleware.auth, articleController.save);
+  router.delete("/article/:id", authMidlleware.auth, articleController.delete);
+  router.put("/article/:id", authMidlleware.auth, articleController.update);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));

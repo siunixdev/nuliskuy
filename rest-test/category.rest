@@ -10,7 +10,7 @@ GET http://localhost:5000/api/v1/category/26
 ### SAVE
 POST http://localhost:5000/api/v1/category/
 Content-Type: application/json
-Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 
 {
     "name" : "More"
@@ -19,7 +19,7 @@ Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB
 ### UPDATE
 PATCH http://localhost:5000/api/v1/category/9
 Content-Type: application/json
-Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 
 {
     "name" : "Human Parts"
@@ -27,4 +27,4 @@ Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB
 
 ### DELETE
 DELETE http://localhost:5000/api/v1/category/15
-Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE

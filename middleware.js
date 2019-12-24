@@ -20,8 +20,7 @@ exports.auth = (req, res, next) => {
       return res.status(403).json({ message });
     }
 
-    user_id = user.id;
-    req.user_id = user.user_id;
+    req.user_id = user.id;
     next();
   });
 };

@@ -55,7 +55,7 @@ exports.signUp = (req, res) => {
                         .then(user => {
                           if (user) {
                             message = "Success";
-                            const token = jwt.sign(user.id, secretKey);
+                            const token = jwt.sign({ id: user.id }, secretKey);
                             res.status(200).json({ message, token });
                           } else {
                             message = "Bad request";
@@ -107,7 +107,7 @@ exports.sign = (req, res) => {
             res.status(200).json({ message });
           } else {
             message = "Success";
-            const token = jwt.sign(user.id, secretKey);
+            const token = jwt.sign({ id: user.id }, secretKey);
             res.status(200).json({ email, token });
           }
         });
