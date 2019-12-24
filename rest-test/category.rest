@@ -10,6 +10,7 @@ GET http://localhost:5000/api/v1/category/26
 ### SAVE
 POST http://localhost:5000/api/v1/category/
 Content-Type: application/json
+Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I
 
 {
     "name" : "More"
@@ -18,10 +19,12 @@ Content-Type: application/json
 ### UPDATE
 PATCH http://localhost:5000/api/v1/category/9
 Content-Type: application/json
+Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I
 
 {
     "name" : "Human Parts"
 }
 
 ### DELETE
-DELETE http://localhost:5000/api/v1/category/1
+DELETE http://localhost:5000/api/v1/category/15
+Authorization : bearer eyJhbGciOiJIUzI1NiJ9.MTI.3WkU5Og7_XlP8AGlR9uCdGIoXsbKLRUB7qOkxswhN7I

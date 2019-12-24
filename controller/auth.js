@@ -7,8 +7,8 @@ const Category = model.category;
 const Article = model.article;
 const Comment = model.comment;
 const Follow = model.follow;
-const saltRound = 10;
-const secretKey = "siunix";
+const saltRound = 10; //process.env.SALT_ROUND;
+const secretKey = "siunix"; //process.env.SECRET_KEY;
 
 exports.signUp = (req, res) => {
   let message = "";
