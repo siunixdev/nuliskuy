@@ -1,0 +1,10 @@
+### SIGNUP
+POST http://localhost:5000/api/v1/signup/
+Content-Type: application/json
+
+{
+    "fullname"  : "Rahmat Rifaldy",
+    "username"  : "rahmat",
+    "email"     : "rhmat@gmail.com",
+    "password"  : "123456"
+}
