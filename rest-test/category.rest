@@ -4,7 +4,7 @@
 GET http://localhost:5000/api/v1/categories/
 
 ### DETAIL
-GET http://localhost:5000/api/v1/category/24
+GET http://localhost:5000/api/v1/category/26
 
 
 ### SAVE
@@ -12,16 +12,16 @@ POST http://localhost:5000/api/v1/category/
 Content-Type: application/json
 
 {
-    "name" : "Elementor"
+    "name" : "More"
 }
 
 ### UPDATE
-PATCH http://localhost:5000/api/v1/category/23
+PATCH http://localhost:5000/api/v1/category/9
 Content-Type: application/json
 
 {
-    "name" : "Elementor1"
+    "name" : "Human Parts"
 }
 
 ### DELETE
-DELETE http://localhost:5000/api/v1/category/24
+DELETE http://localhost:5000/api/v1/category/1

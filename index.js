@@ -1,3 +1,4 @@
+require("dotenv").config();
 require("express-group-routes");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -6,6 +7,7 @@ const port = 5000;
 
 // Controller
 const categoryController = require("./controller/category");
+const authController = require("./controller/auth");
 
 app.use(bodyParser.json());
 
@@ -14,6 +16,9 @@ app.get("/", (req, res) => {
 });
 
 app.group("/api/v1", router => {
+  router.post("/signup", authController.signUp);
+  router.post("/sign", authController.sign);
+
   router.get("/categories", categoryController.list);
   router.get("/category/:id", categoryController.detail);
   router.post("/category/", categoryController.save);

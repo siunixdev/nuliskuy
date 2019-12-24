@@ -1,9 +1,9 @@
 const model = require("../models");
-const user = model.user;
+const User = model.user;
 const Category = model.category;
-const article = model.article;
-const comment = model.comment;
-const follow = model.follow;
+const Article = model.article;
+const Comment = model.comment;
+const Follow = model.follow;
 
 // GET LIST
 exports.list = (req, res) => {
@@ -64,16 +64,33 @@ exports.update = (req, res) => {
 
   const { id } = req.params;
 
-  Category.update(req.body, {
-    where: { id }
+  Category.findAll({
+    where: {
+      id
+    }
   })
     .then(data => {
-      message = "Success";
-      res.status(200).json({ message });
+      if (!data.length) {
+        message = "No data";
+        res.status(200).json({ message });
+      } else {
+        Category.update(req.body, {
+          where: { id }
+        })
+          .then(data => {
+            message = "Success";
+            res.status(200).json({ message });
+          })
+          .catch(error => {
+            message = "Server response error";
+            res.status(500).json({ message });
+          });
+      }
     })
     .catch(error => {
-      message = "Server response error";
-      res.status(500).json({ message });
+      res.status(500).json({
+        massage: "Server response error!"
+      });
     });
 };
 
