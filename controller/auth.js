@@ -106,13 +106,11 @@ exports.sign = (req, res) => {
             message = "Password doesn't match";
             res.status(200).json({ message });
           } else {
-            // res.status(200).json({ user });
             message = "Success";
-            const token = jwt.sign({ user }, secretKey);
-            res.status(200).json({ message, token });
+            const token = jwt.sign(user.id, secretKey);
+            res.status(200).json({ email, token });
           }
         });
-        // res.status(200).json({ user.password });
       } else {
         message = "Wrong email or password!";
         res.status(500).json({ message });
