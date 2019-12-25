@@ -8,6 +8,7 @@ const port = 5000;
 // Controller
 const categoryController = require("./controller/category");
 const articleController = require("./controller/article");
+const userController = require("./controller/user");
 const commentController = require("./controller/comment");
 const authController = require("./controller/auth");
 
@@ -37,6 +38,10 @@ app.group("/api/v1", router => {
 
   router.get("/articles", articleController.list);
   router.get("/article/:id", articleController.detail);
+  router.get(
+    "/article/:category_id/related",
+    articleController.get_related_article_list
+  );
   router.post("/article/", authMidlleware.auth, articleController.save);
   router.delete("/article/:id", authMidlleware.auth, articleController.delete);
   router.put("/article/:id", authMidlleware.auth, articleController.update);
@@ -61,6 +66,11 @@ app.group("/api/v1", router => {
     "/article/:article_id/comment/:id",
     authMidlleware.auth,
     commentController.update
+  );
+
+  router.get(
+    "/user/:user_id/articles",
+    userController.get_related_article_list
   );
 });
 

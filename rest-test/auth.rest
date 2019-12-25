@@ -3,10 +3,10 @@ POST http://localhost:5000/api/v1/signup/
 Content-Type: application/json
 
 {
-    "fullname"  : "Abdillah F",
-    "username"  : "siunix",
-    "email"     : "siunixdev@gmail.com",
-    "password"  : "siunix"
+    "fullname"  : "Pandu",
+    "username"  : "pandu",
+    "email"     : "pandu@gmail.com",
+    "password"  : "pandu"
 }
 
 ### SIGN
@@ -14,6 +14,6 @@ POST http://localhost:5000/api/v1/sign/
 Content-Type: application/json
 
 {
-    "email"     : "siunixdev@gmail.com",
-    "password"  : "siunix"
+    "email"     : "pandu@gmail.com",
+    "password"  : "pandu"
 }

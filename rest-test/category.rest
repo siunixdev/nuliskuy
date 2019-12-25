@@ -17,14 +17,17 @@ Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6
 }
 
 ### UPDATE
-PATCH http://localhost:5000/api/v1/category/9
+PATCH http://localhost:5000/api/v1/category/2
 Content-Type: application/json
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 
 {
-    "name" : "Human Parts"
+    "name" : "Technology"
 }
 
 ### DELETE
 DELETE http://localhost:5000/api/v1/category/15
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+
+### GET ARTICLE BY CATEGORY
+GET http://localhost:5000/api/v1/category/2/articles

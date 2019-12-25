@@ -9,12 +9,13 @@ GET http://localhost:5000/api/v1/article/10
 ### SAVE
 POST http://localhost:5000/api/v1/article/
 Content-Type: application/json
-Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTU3NzI1NDI5OH0.PF2JNnHA_XWyfOWrAGiP0Q0-uPNDoBfxL54bhLDrjhQ
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 # Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
 
 {
-    "title" : "Korban Bus Terjun ke Jurang di Sumsel: 28 Orang Tewas, 13 Terluka",
-    "content" : "Tim gabungan dari TNI, Polri, Basarnas, dan unsur potensi SAR mengehentikan sementara proses pencarian korban Bus Sriwijaya yang terjun ke jurang saat melintas di tikungan Lematang Indah, Kecamatan Dempo Tengah, Kota Pagar Alam, Sumatera Selatan.",
+    "title" : "Suami beristri 3 asyik bersama selingkuhan",
+    "content" : "Asyik asyik saja sih.",
     "image" : "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1573011748/ygaexjqgh0kncjfvxoap.jpg",
     "category_id" : 2,
     "is_published" : 1,
@@ -22,7 +23,7 @@ Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6
 }
 
 ### UPDATE
-PUT http://localhost:5000/api/v1/article/10
+PUT http://localhost:5000/api/v1/article/11
 Content-Type: application/json
 # Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
@@ -41,3 +42,6 @@ Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6
 DELETE http://localhost:5000/api/v1/article/6
 # Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+
+### GET RELATED ARTICLE
+GET http://localhost:5000/api/v1/article/3/related
