@@ -32,7 +32,7 @@ app.group("/api/v1", router => {
     categoryController.delete
   );
   router.patch("/category/:id", authMidlleware.auth, categoryController.update);
-  // router.get("/category/:id/articles", categoryController.getArticleList);
+  router.get("/category/:id/articles", categoryController.getArticleList);
 
   router.get("/articles", articleController.list);
   router.get("/article/:id", articleController.detail);
