@@ -1,0 +1,42 @@
+## ARTICLE
+
+### LIST
+GET http://localhost:5000/api/v1/articles/10/comments
+
+### DETAIL
+GET http://localhost:5000/api/v1/article/10/comment/1
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+
+### SAVE
+POST http://localhost:5000/api/v1/article/10/comment
+Content-Type: application/json
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+
+{
+    "comment" : "Test comment 2",
+    "article_id" : 10,
+    "is_published" : 1,
+    "is_archived" : 0
+}
+
+### UPDATE
+PUT http://localhost:5000/api/v1/article/10/comment
+Content-Type: application/json
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+
+
+{
+    "title" : "Seeding MongoDB database the right way",
+    "content" : "About year ago, my friend and I started building a basic CRUD app as a side project. On the back-end side there was nothing fancy — a simple GraphQL API server written in TypeScript. When it comes to storing the data, it was a typical use case for NoSQL database, so we’ve picked the most popular solution out there — MongoDB. At some point we needed to import some development data to test our database queries. There are many tools for MongoDB data import, including the official one, mongoimport. I started to do a research and it turned out that none of them is good enough. Every single solution had three flaws described below.",
+    "image" : "https://miro.medium.com/max/5045/1*HBhUirJi_iEoPq59BIlyHQ.jpeg",
+    "category_id" : 3,
+    "is_published" : 1,
+    "is_archived" : 0
+}
+
+### DELETE
+DELETE http://localhost:5000/api/v1/article/10/comment/1
+# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
