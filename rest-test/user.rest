@@ -1,0 +1,2 @@
+### GET ARTICLE BY PERSON
+GET http://localhost:5000/api/v1/user/14/articles
