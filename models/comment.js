@@ -13,6 +13,17 @@ module.exports = (sequelize, DataTypes) => {
   );
   comment.associate = function(models) {
     // associations can be defined here
+    comment.belongsTo(models.article, {
+      foreignKey: "article_id",
+      as: "article",
+      sourceKey: "id"
+    });
+
+    comment.belongsTo(models.user, {
+      foreignKey: "creator_user_id",
+      as: "user",
+      sourceKey: "id"
+    });
   };
   return comment;
 };
