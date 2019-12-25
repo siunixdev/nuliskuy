@@ -6,6 +6,8 @@ const Article = model.article;
 const Comment = model.comment;
 const Follow = model.follow;
 
+let slugify = require("slugify");
+
 // GET LIST
 exports.list = (req, res) => {
   let message = "";
@@ -95,7 +97,7 @@ exports.detail = (req, res) => {
       }
     ],
     where: {
-      id: req.params.id
+      slug: req.params.id
     }
   })
     .then(data => {
@@ -121,11 +123,14 @@ exports.save = (req, res) => {
     is_archived
   } = req.body;
 
+  slug = slugify(title.toLowerCase());
+
   Article.create({
     title,
     content,
     image,
     category_id,
+    slug,
     creator_user_id: user_id,
     is_published,
     is_archived
@@ -156,6 +161,8 @@ exports.update = (req, res) => {
     is_archived
   } = req.body;
 
+  slug = slugify(title.toLowerCase());
+
   Article.findAll({
     where: {
       id
@@ -174,6 +181,7 @@ exports.update = (req, res) => {
               content,
               image,
               category_id,
+              slug,
               creator_user_id: user_id,
               is_published,
               is_archived
@@ -270,6 +278,9 @@ exports.get_related_article_list = (req, res) => {
         as: "category",
         attributes: {
           exclude: ["is_published", "is_archived", "createdAt", "updatedAt"]
+        },
+        where: {
+          slug: category_id
         }
       },
       {
@@ -288,9 +299,6 @@ exports.get_related_article_list = (req, res) => {
         }
       }
     ],
-    where: {
-      category_id
-    },
     order: [Sequelize.fn("RAND")],
     limit: 3
   })

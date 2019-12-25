@@ -23,6 +23,11 @@ module.exports = (sequelize, DataTypes) => {
       as: "comment",
       foreignKey: "creator_user_id"
     });
+
+    user.hasMany(models.follow, {
+      as: "follower",
+      foreignKey: "following_user_id"
+    });
   };
   return user;
 };

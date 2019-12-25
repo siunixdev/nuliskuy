@@ -4,20 +4,18 @@
 GET http://localhost:5000/api/v1/articles/
 
 ### DETAIL
-GET http://localhost:5000/api/v1/article/10
+GET http://localhost:5000/api/v1/article/artikel-dari-category-3
 
 ### SAVE
 POST http://localhost:5000/api/v1/article/
 Content-Type: application/json
-Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTU3NzI1NDI5OH0.PF2JNnHA_XWyfOWrAGiP0Q0-uPNDoBfxL54bhLDrjhQ
-# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
-# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3Mjc1MTc1fQ.AsY4dA6NQoiyN6psX_rvhSZgw5dETY9BpV-meUqxQMI
 
 {
-    "title" : "Suami beristri 3 asyik bersama selingkuhan",
-    "content" : "Asyik asyik saja sih.",
+    "title" : "Artikel dari category 3 part 2",
+    "content" : "Artikel category 3 part 3 coy",
     "image" : "https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1573011748/ygaexjqgh0kncjfvxoap.jpg",
-    "category_id" : 2,
+    "category_id" : 3,
     "is_published" : 1,
     "is_archived" : 0
 }
@@ -25,9 +23,6 @@ Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6
 ### UPDATE
 PUT http://localhost:5000/api/v1/article/11
 Content-Type: application/json
-# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
-Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
-
 
 {
     "title" : "Seeding MongoDB database the right way",
@@ -40,8 +35,6 @@ Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6
 
 ### DELETE
 DELETE http://localhost:5000/api/v1/article/6
-# Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
-Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTU3NzIyMDY4OX0.9HUIbEn6rF7XZmQEuGTuGIn0SQ9bkMdqY4qxJxn7Jsg
 
 ### GET RELATED ARTICLE
-GET http://localhost:5000/api/v1/article/3/related
+GET http://localhost:5000/api/v1/article/gift-medium/related

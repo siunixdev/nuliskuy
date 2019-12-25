@@ -4,13 +4,13 @@
 GET http://localhost:5000/api/v1/categories/
 
 ### DETAIL
-GET http://localhost:5000/api/v1/category/26
+GET http://localhost:5000/api/v1/category/gift-medium
 
 
 ### SAVE
 POST http://localhost:5000/api/v1/category/
 Content-Type: application/json
-Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
+Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTc3MjczNjQ1fQ.aSB4t5ZwQYEufk-_KBo3yYnYJerAbzjW5xbT1Tvlhuk
 
 {
     "name" : "More"
@@ -22,12 +22,12 @@ Content-Type: application/json
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 
 {
-    "name" : "Technology"
+    "name" : "Gift medium"
 }
 
 ### DELETE
-DELETE http://localhost:5000/api/v1/category/15
+DELETE http://localhost:5000/api/v1/category/1
 Authorization : bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTU3NzIxMTAzNH0.788FeaUqGBW31wRI1__gpbN9wfrHmmZAussH8PsgvzE
 
 ### GET ARTICLE BY CATEGORY
-GET http://localhost:5000/api/v1/category/2/articles
+GET http://localhost:5000/api/v1/category/gift-medium/articles

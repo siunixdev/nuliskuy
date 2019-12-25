@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     "category",
     {
       name: DataTypes.STRING,
+      slug: DataTypes.STRING,
       is_published: DataTypes.BOOLEAN,
       is_archived: DataTypes.BOOLEAN
     },

@@ -5,6 +5,8 @@ const Article = model.article;
 const Comment = model.comment;
 const Follow = model.follow;
 
+let slugify = require("slugify");
+
 // GET LIST
 exports.list = (req, res) => {
   let message = "";
@@ -32,7 +34,7 @@ exports.detail = (req, res) => {
       exclude: ["is_published", "is_archived", "createdAt", "updatedAt"]
     },
     where: {
-      id: req.params.id
+      slug: req.params.id
     }
   })
     .then(data => {
@@ -47,7 +49,15 @@ exports.detail = (req, res) => {
 // SAVE
 exports.save = (req, res) => {
   let message = "";
-  Category.create(req.body)
+
+  const { name } = req.body;
+
+  slug = slugify(name.toLowerCase());
+
+  Category.create({
+    name,
+    slug
+  })
     .then(data => {
       message = "Success";
       res.status(200).json({ message, data });
@@ -64,6 +74,10 @@ exports.update = (req, res) => {
 
   const { id } = req.params;
 
+  const { name } = req.body;
+
+  slug = slugify(name.toLowerCase());
+
   Category.findAll({
     where: {
       id
@@ -74,9 +88,15 @@ exports.update = (req, res) => {
         message = "No data";
         res.status(200).json({ message });
       } else {
-        Category.update(req.body, {
-          where: { id }
-        })
+        Category.update(
+          {
+            name,
+            slug
+          },
+          {
+            where: { id }
+          }
+        )
           .then(data => {
             message = "Success";
             res.status(200).json({ message });
@@ -153,6 +173,9 @@ exports.getArticleList = (req, res) => {
         as: "category",
         attributes: {
           exclude: ["is_published", "is_archived", "createdAt", "updatedAt"]
+        },
+        where: {
+          slug: id
         }
       },
       {
@@ -170,10 +193,7 @@ exports.getArticleList = (req, res) => {
           ]
         }
       }
-    ],
-    where: {
-      category_id: id
-    }
+    ]
   })
     .then(data => {
       res.status(200).json(data);

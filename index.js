@@ -9,6 +9,7 @@ const port = 5000;
 const categoryController = require("./controller/category");
 const articleController = require("./controller/article");
 const userController = require("./controller/user");
+const followController = require("./controller/follow");
 const commentController = require("./controller/comment");
 const authController = require("./controller/auth");
 
@@ -72,6 +73,9 @@ app.group("/api/v1", router => {
     "/user/:user_id/articles",
     userController.get_related_article_list
   );
+
+  router.get("/:user_id/followers", followController.list);
+  router.post("/follow/", authMidlleware.auth, followController.save);
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
