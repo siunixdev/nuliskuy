@@ -2,6 +2,7 @@ require("dotenv").config();
 require("express-group-routes");
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 const port = 5000;
 
@@ -17,6 +18,7 @@ const authController = require("./controller/auth");
 const authMidlleware = require("./middleware");
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("This is nulisKuy!");
@@ -69,10 +71,7 @@ app.group("/api/v1", router => {
     commentController.update
   );
 
-  router.get(
-    "/user/:user_id/articles",
-    userController.get_related_article_list
-  );
+  router.get("/user/:user_id/articles", userController.article_list);
 
   router.get("/:user_id/followers", followController.list);
   router.post("/follow/", authMidlleware.auth, followController.save);

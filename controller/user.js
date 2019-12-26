@@ -7,7 +7,7 @@ const Comment = model.comment;
 const Follow = model.follow;
 
 // GET ARTICLE BY USER
-exports.get_related_article_list = (req, res) => {
+exports.article_list = (req, res) => {
   let message = "";
   const { user_id } = req.params;
 
